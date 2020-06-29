@@ -194,7 +194,4 @@ pre {
             fill: $grey-color;
         }
     }
-    @include media-query($on-palm) {
-        font-size: 0;
-    }
 }

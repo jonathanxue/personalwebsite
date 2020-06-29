@@ -49,6 +49,12 @@
     }
 }
 
+.fading-span {
+    @include media-query($on-palm) {
+        visibility: hidden;
+    }
+}
+
 .site-nav {
     float: right;
     line-height: 56px;
