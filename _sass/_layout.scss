@@ -14,7 +14,6 @@
 #site-title {
     font-size: 26px;
     font-weight: 300;
-    //line-height: 56px;
     letter-spacing: -1px;
     margin-bottom: 0;
     float: left;
@@ -88,8 +87,6 @@
     @include media-query($on-palm) {
         position: absolute;
         right: $spacing-unit / 2;
-        //background-color: $background-color;
-        //border: 1px solid $grey-color-light;
         border-radius: 5px;
         text-align: right;
 
@@ -99,7 +96,6 @@
         }
 
         .page-link {
-            //display: block;
             padding: 0;
             min-width: 30px;
             box-sizing: border-box;
@@ -107,7 +103,6 @@
             &:not(:last-child) {
                 margin-right: 0;
             }
-            //margin-left: 20px;
         }
     }
 }
@@ -281,6 +276,10 @@
             width: 150px;
             height: 150px;
         }
+    }
+
+    @include media-query($on-palm) {
+        visibility: hidden;
     }
 
     @media screen and (max-width: 650px) {
