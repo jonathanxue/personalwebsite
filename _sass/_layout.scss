@@ -329,6 +329,9 @@
         border-bottom: 2px solid #ffffff;
         margin-top: 10%;
     }
+    @media screen and (max-width: 500px) {
+        visibility: hidden;
+    }
 }
 
 #main-image {
