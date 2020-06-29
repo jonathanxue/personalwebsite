@@ -50,6 +50,7 @@
 }
 
 .fading-span {
+    color: $grey-color;
     @include media-query($on-palm) {
         visibility: hidden;
     }
