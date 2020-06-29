@@ -9,7 +9,6 @@ dl, dd, ol, ul, figure {
 }
 
 
-
 /**
  * Basic styling
  */
@@ -23,6 +22,7 @@ body {
     -o-font-feature-settings: "kern" 1;
     font-feature-settings: "kern" 1;
     font-kerning: normal;
+    //display: flex;
 }
 
 
@@ -91,17 +91,8 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-    color: $brand-color;
+    color: $text-color;
     text-decoration: none;
-
-    &:visited {
-        color: darken($brand-color, 15%);
-    }
-
-    &:hover {
-        color: $text-color;
-        text-decoration: underline;
-    }
 }
 
 
@@ -192,13 +183,13 @@ pre {
  * Icons
  */
 .icon {
-
+    box-sizing: border-box;
+    vertical-align: middle;
     > svg {
         display: inline-block;
-        width: 16px;
-        height: 16px;
-        vertical-align: middle;
-
+        width: 18px;
+        height: 18px;
+        margin: 0px 5px;
         path {
             fill: $grey-color;
         }
