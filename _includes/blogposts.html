@@ -1,6 +1,81 @@
+<div class = "blog-entry">
+    <div class="wrapper">
+        <div class="blog-entry-heading">
+            <h2>Dev Log #1 - Engine Development and Cluelessness</h2>
+            <h3>July 30th 2020</h3>
+        </div>
+        <div class="blog-entry-body">
+            <p>It's been about 4 months since I decided to give game development a try. The original intention was to learn the basics of the discipline and boy did I learn. This is summary of the devlopment that occured in the past 4 months</p>
+            <p>First, I began with research, because I literally had no idea what I was doing or where to start. This initial research showed me that I needed an engine and the natural conclusion was to make my own, as using something like Unity would defeat the purpose of this entire endeavour. I decided to use C++ to make the engine, because frankly my C++ needs practice anyways.</p>
+            <h3>Engine Development</h3>
+            <p>The first step was just displaying something on the screen and I quickly found <a href=https://www.libsdl.org target = _blank>SDL2</a>, a library that helps interface with hardware. I ended up using SDL2 quite a lot in my engine.</p>
+            <p>
+                After I got basic rendering done, my time was spent researching features that an engine should have, followed by my own implementation. Here's a summary of the most important features.
+            </p>
+            <ul>
+                <li>
+                    <h4>Entity Component System (ECS)</h4>
+                    <p>
+                        The first, and arguably most important, feature I added was an Entity Component System. This system allows for easy and scalable creation of game objects. Entities are pretty much just empty containers for Components. The latter is used to define behaviour of whatever object you wish to create, be it the player character or a UI element. 
+                    </p>
+                    <img src="images/ecs-example.png"/>
+                    <p>
+                        In the example above, we are creating a button which needs to be clickable (MouseController), respond audibly (SoundEffectComponent) and have general button-like behaviour (UIButton). The last component includes things like providing visual feedback for the user and callback support.
+                    </br>In my implementation, all of the entities created will be held by a Manager, which will help me keep track of my Entities.
+                    </p>
+                </li>
+                <li>
+                    <h4>Scene Management</h4>
+                    <p>
+                        This feature is also pretty important, as it is what will eventually allow me to change levels, open menus or play cutscenes in the game.
+                    </p>
+                    <p>
+                        Every menu, level or cinematic in the game will be a Scene that will contain entities, a manager and whatever events that are specific to a level. A SceneManager is used to select the desired scene and present it to the user. So if the user wanted to open the settings menu, the SceneManager will select the settings scene and present to the user. If the player were to enter a new area, we would load said area's scene.
+                    </p>
+                </li>
+                <li>
+                    <h4>Serialization</h4>
+                    <p>
+                        Being able to load scenes is nice, but these scenes must be pulled from and stored somewhere and creating a class for each scene seems like a complete nightmare. I decided to just have scenes be XML files that will be parsed when the scene needs to be created. This way scenes will all have the same format and I give the compiler a break by having fewer source files.
+                    </p>
+                    <p>
+                        As for using XML, I'm still not totally sure which format I want to serialize data in. I'm still considering using JSON or just binary. If you have any suggestions please let me know!
+                    </p>
+                </li>
+                <li>
+                    <h4>User Interface (UI)</h4>
+                    <p>
+                        Since I'm making my own engine, I need my own custom UI. I found some SDL2-based UI implementations online, but none were really to my liking so I'm making my own with SDL's text renderer (SDL_ttf). This has proven to be a super annoying as there are a hilarious amount of finicky bugs in my implementation that are annoying to quash. That being said, the customizability I have is really nice so I will continue down this path despite having to fix annoyances like this dropdown randomly changing font sizes.
+                    </p>
+                    <img src="images/dropdowndumb.gif" id="rajko"/>
+                </li>
+            </ul>
+            <h3>Summary</h3>
+            <p>
+                I'm actually surprised at how much progress I made despite how little I knew going in. This project of mine has so far turned out to be quite fun so I'm looking forward to continue. Speaking of which, these are some of the things in the pipeline.
+            </p>
+            <ul>
+                <li>Physics Engine</li>
+                <li>Drawing Art (God help me, I'm bad at drawing)</li>
+                <li>Bug fixes/optimizations</li>
+                <li>Creating actual game systems</li>
+            </ul>
+            <p>
+                I've only really made progress on the engine, but hopefully I'll make progress on the actual game soon.
+            </p>
+        </div>
+    </div>
+</div>
 <div class="blog-entry">
     <div class="wrapper">
-        <h1>Dev Log #1</h1>
-        <p>Nothing to report!</p>
+        <div class="blog-entry-heading">
+            <h2>Blog Post - Trying Game Development</h2>
+            <h3>April 1st 2020</h3>
+        </div>
+        <div class="blog-entry-body">
+            <p>The COVID-19 pandemic began to personally affect me in my final year of university. Life in quarantine began and as a result all my plans, both professional and recreational, were postponed. Like many others, I suddenly had nothing but free time and little to do. Instead of resigning to doing nothing, I've decided to pursue something that has always interested me, but I never really looked into: Game Development.</p>
+            <p>I've enjoyed playing video games for pretty much my entire life and while playing I've always questioned what was happening behind the scenes. When I became a developer, my curiosity intensified. I would repeatedly ask myself <i>How can you manage so many game objects at once? How are levels loaded into the game? How are levels even programmed?</i> I honestly have no clue how game development is done. I vaguely know that you need a game engine and assets but that's the extent of my knowledge.</p>
+            <p>To that end, I'm making a game to answer these questions of mine. I figure that the best way to learn these things is to try it out for yourself and what better time than now to do so. I'll be posting progress reports in a dev log here so you can follow my progress if you are at all interested.</p>
+        </div>
     </div>
 </div>

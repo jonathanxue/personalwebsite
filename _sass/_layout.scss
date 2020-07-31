@@ -207,8 +207,41 @@
 * Blog Posts
 */
 .blog-entry {
-    display: inline-block;
+    background-color: $brand-color;
+    margin: 15px 0;
 }
+
+.blog-entry-heading {
+    margin: 15px 0;
+    border-bottom: 2px solid $background-color;
+    
+    h2 {
+        margin-bottom: 0px;
+    }
+    h3 {
+        opacity: 80%;
+    }
+}
+
+.blog-entry-body {
+    p {
+        margin: 10px 0px;
+    }
+
+    img {
+        display: block;
+        position: relative;
+        width: 75%;
+
+        margin: 10px auto;
+    }
+
+    #rajko {
+        width: 30%;
+    }
+}
+
+
 
 /**
 * Sections
@@ -219,7 +252,6 @@
     margin: $spacing-unit;
     border: 1px solid $border-color;
 }
-
 
 /**
 * Home Page
