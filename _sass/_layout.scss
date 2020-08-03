@@ -314,6 +314,7 @@
         #main-image {
             width: 150px;
             height: 150px;
+            object-fit: cover;
         }
     }
 
@@ -338,6 +339,7 @@
     height: 300px;
     border-radius: 150px;
     border: 2px solid $border-color;
+    object-fit: cover;
 }
 
 #background-image {
